@@ -31,9 +31,9 @@ resource "azurerm_public_ip_prefix" "fw" {
 }
 
 resource "azurerm_public_ip" "fw-mgmt-pip" {
-  count = var.enable_force_tunneling ? 1 : 0
+  count               = var.enable_force_tunneling ? 1 : 0
   name                = "${local.firewall_name}-mgmt-pip"
-  location = var.location
+  location            = var.location
   resource_group_name = var.resource_group_name
   allocation_method   = "Static"
   sku                 = "Standard"
@@ -54,15 +54,15 @@ resource "azurerm_firewall" "fw" {
     subnet_id = var.subnet_id
 
   }
-   dynamic "management_ip_configuration" {
-    for_each =  var.enable_force_tunneling ? [1] : []
+  dynamic "management_ip_configuration" {
+    for_each = var.enable_force_tunneling ? [1] : []
     content {
       name                 = "managementConfig"
       public_ip_address_id = azurerm_public_ip.fw-mgmt-pip.0.id
       #public_ip_address_id = azurerm_public_ip_prefix.fw.id
       subnet_id = var.mgmt_subnet_id
     }
-    
+
   }
   sku_name = var.sku_name
   sku_tier = var.sku_tier

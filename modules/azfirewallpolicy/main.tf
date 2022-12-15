@@ -1,12 +1,12 @@
 
 
 resource "azurerm_firewall_policy" "fwpol" {
-  base_policy_id = var.base_policy_id
-  location = var.location
-  name = var.name
-  resource_group_name = var.resource_group_name
-  sku = var.sku
-  tags = var.tags
+  base_policy_id           = var.base_policy_id
+  location                 = var.location
+  name                     = var.name
+  resource_group_name      = var.resource_group_name
+  sku                      = var.sku
+  tags                     = var.tags
   threat_intelligence_mode = var.threat_intelligence_mode
 
   dynamic "dns" {
@@ -24,10 +24,10 @@ resource "azurerm_firewall_policy" "fwpol" {
   dynamic "threat_intelligence_allowlist" {
     for_each = var.threat_intelligence_allowlist
     content {
-      fqdns = threat_intelligence_allowlist.value["fqdns"]
+      fqdns        = threat_intelligence_allowlist.value["fqdns"]
       ip_addresses = threat_intelligence_allowlist.value["ip_addresses"]
     }
   }
 
-  
+
 }

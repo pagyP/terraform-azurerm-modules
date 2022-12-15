@@ -7,20 +7,20 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_virtual_wan" "vwan" {
-  location            = var.location
-  name                = var.name
+  location = var.location
+  name     = var.name
   #resource_group_name = var.resource_group_name
-  resource_group_name = azurerm_resource_group.rg.name
-  allow_branch_to_branch_traffic = var.allow_branch_to_branch_traffic
-  type = var.type
-  disable_vpn_encryption = var.disable_vpn_encryption
+  resource_group_name               = azurerm_resource_group.rg.name
+  allow_branch_to_branch_traffic    = var.allow_branch_to_branch_traffic
+  type                              = var.type
+  disable_vpn_encryption            = var.disable_vpn_encryption
   office365_local_breakout_category = var.office365_local_breakout_category
-  tags                = var.tags
+  tags                              = var.tags
 }
 
 resource "azurerm_virtual_hub" "hub" {
 
-    for_each = var.hub_config
+  for_each = var.hub_config
 
   name = each.value.name
   #address_prefix      = var.hub_config

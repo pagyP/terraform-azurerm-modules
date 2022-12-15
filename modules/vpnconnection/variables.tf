@@ -34,7 +34,7 @@ variable "type" {
 variable "enable_bgp" {
   description = "value to enable/disable BGP"
   type        = bool
-  default = true
+  default     = true
 }
 
 

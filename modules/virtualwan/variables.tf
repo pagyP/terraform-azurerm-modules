@@ -6,7 +6,7 @@ variable "resource_group_name" {
 
 variable "location" {
   description = "The location/region where the core network will be created. The full list of Azure regions can be found at https://azure.microsoft.com/regions"
-    default     = "westeurope"
+  default     = "westeurope"
 }
 
 variable "name" {
@@ -18,7 +18,7 @@ variable "allow_branch_to_branch_traffic" {
   description = "Allow branch to branch traffic"
   default     = "true"
 }
-  
+
 variable "type" {
   description = "The type of the virtual wan"
   default     = "Standard"
@@ -33,7 +33,7 @@ variable "disable_vpn_encryption" {
   description = "Disable vpn encryption"
   default     = "false"
 }
-  
+
 
 variable "hub_config" {
   type    = map(any)
@@ -42,7 +42,7 @@ variable "hub_config" {
 
 
 variable "tags" {
-  type    = map(any)
+  type = map(any)
   default = {
     environment = "production"
     cost_center = "12345"

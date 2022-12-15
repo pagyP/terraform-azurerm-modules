@@ -79,10 +79,10 @@ variable "subnet_id" {
 
 variable "mgmt_subnet_id" {
   description = "The management subnet id to use for the firewall"
-  default = null
+  default     = null
 
 }
-  
+
 
 variable "firewall_policy_id" {
   description = "The firewall policy id to use for the firewall"

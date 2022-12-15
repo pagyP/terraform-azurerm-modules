@@ -1,6 +1,6 @@
 variable "name" {
-  description = "Name of the vnet to create"
-  default     = "acctvnet"
+  description = "Name of the route table"
+  default     = "rt-rt01"
 }
 
 variable "resource_group_name" {
@@ -11,19 +11,6 @@ variable "resource_group_name" {
 variable "location" {
   description = "The location/region where the core network will be created. The full list of Azure regions can be found at https://azure.microsoft.com/regions"
 }
-
-variable "address_space" {
-
-  description = "The address space that is used by the virtual network."
-  //default     = ["10.0.0.0/16"]
-}
-
-# If no values specified, this defaults to Azure DNS 
-variable "dns_servers" {
-  description = "The DNS servers to be used with vNet."
-  default     = []
-}
-
 
 variable "tags" {
   description = "The tags to associate with your network and subnets."
@@ -36,11 +23,22 @@ variable "tags" {
 }
 
 
-variable "subnet_config" {
-  type    = map(any)
-  default = {}
+variable "routes" {
+  type = map(any)
+  default = {
+    Default = {
+      name                   = "Default-Route"
+      address_prefix         = "0.0.0.0/0"
+      next_hop_type          = "VirtualAppliance"
+      next_hop_in_ip_address = "192.168.50.68"
+    }
+  }
 }
 
 
+variable "disable_bgp_route_propagation" {
+  description = "Should BGP route propagation be disabled?"
+  default     = false
+}
 
 

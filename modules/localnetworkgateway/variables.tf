@@ -29,7 +29,7 @@ variable "tags" {
 # variable "bgp_enabled" {
 #   description = "value to enable/disable BGP"
 #   type        = bool
-  
+
 # }
 
 # variable "asn" {

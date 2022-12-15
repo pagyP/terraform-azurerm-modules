@@ -8,9 +8,9 @@ resource "azurerm_local_network_gateway" "locgw" {
   dynamic "bgp_settings" {
     for_each = var.bgp_settings
     content {
-      asn = bgp_settings.value["asn"]
+      asn                 = bgp_settings.value["asn"]
       bgp_peering_address = bgp_settings.value["bgp_peering_address"]
-      peer_weight = bgp_settings.value["peer_weight"]
+      peer_weight         = bgp_settings.value["peer_weight"]
     }
   }
 
