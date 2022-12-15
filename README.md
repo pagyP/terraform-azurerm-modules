@@ -12,7 +12,7 @@ Modules currently in this repository:
 - Azure Local Network gateway
 - Azure Resource Group
 - Azure Virtual Network
-- Azure Virtual WAN
+- Azure Virtual WAN - Work in Progress
 - Azure Virtual Network Gateway
 - Azure Virtual Network Peering
 - Azure VPN Connection
