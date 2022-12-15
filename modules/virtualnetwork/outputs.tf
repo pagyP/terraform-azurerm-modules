@@ -16,3 +16,13 @@ output "subnet_ids_map" {
 output "firewallsubnet" {
   value = lookup(azurerm_subnet.subnet, "AzureFirewallSubnet", null)
 }
+
+output "firewallmanagementsubnet" {
+  value = lookup(azurerm_subnet.subnet, "AzureFirewallManagementSubnet", null)
+}
+
+output "vnet_name" {
+  description = "The name of the virtual network."
+  value       = azurerm_virtual_network.vnet.name
+}
+  

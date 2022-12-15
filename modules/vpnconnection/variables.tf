@@ -31,6 +31,13 @@ variable "type" {
   default     = "IPSec"
 }
 
+variable "enable_bgp" {
+  description = "value to enable/disable BGP"
+  type        = bool
+  default = true
+}
+
+
 variable "tags" {
   description = "Tags for the Key Vault"
   type        = map(any)

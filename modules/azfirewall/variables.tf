@@ -17,6 +17,11 @@ variable "tags" {
   type = map(any)
 }
 
+variable "enable_force_tunneling" {
+  description = "Enable force tunneling for the firewall"
+  default     = false
+}
+
 
 # variable "firewall_config" {
 #   description = "Manages an Azure Firewall configuration"
@@ -71,6 +76,13 @@ variable "subnet_id" {
   description = "The subnet id to use for the firewall"
 
 }
+
+variable "mgmt_subnet_id" {
+  description = "The management subnet id to use for the firewall"
+  default = null
+
+}
+  
 
 variable "firewall_policy_id" {
   description = "The firewall policy id to use for the firewall"

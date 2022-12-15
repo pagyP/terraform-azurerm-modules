@@ -25,3 +25,32 @@ variable "tags" {
   description = "Tags for the Key Vault"
   type        = map(any)
 }
+
+# variable "bgp_enabled" {
+#   description = "value to enable/disable BGP"
+#   type        = bool
+  
+# }
+
+# variable "asn" {
+#   description = "The ASN of the local network gateway"
+#   type        = number
+# }
+
+# variable "bgp_peering_address" {
+#   description = "The BGP peering address of the local network gateway"
+#   type        = string
+# }
+
+variable "bgp_settings" {
+  description = "nested block: NestingList, min items: 0, max items: 1"
+  type = set(object(
+    {
+      asn                 = number
+      bgp_peering_address = string
+      peer_weight         = number
+    }
+  ))
+  default = []
+}
+
