@@ -16,10 +16,11 @@ Modules currently in this repository:
 - Azure Virtual Network Gateway
 - Azure Virtual Network Peering
 - Azure VPN Connection
+- Azure Route Table and Routes
 
 
 ### ToDO
 
 - Add Examples
-- Tidy up code
+- Tidy up the code
 - More modules to be added
