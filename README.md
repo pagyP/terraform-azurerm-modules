@@ -17,7 +17,7 @@ Modules currently in this repository:
 - Azure Virtual Network Peering
 - Azure VPN Connection
 - Azure Route Table and Routes
-
+- Windows Virtual Machine
 
 ### ToDO
 
