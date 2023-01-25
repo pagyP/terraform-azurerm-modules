@@ -1,5 +1,5 @@
 output "route_table_id" {
-  value = azurerm_route_table.rt.id
+  value = azurerm_route_table.main.id
 }
 
 # output "route_table_ids_map" {

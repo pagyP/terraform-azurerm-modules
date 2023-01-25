@@ -1,6 +1,6 @@
 output "vnet_id" {
   description = "The id of the virtual network."
-  value       = azurerm_virtual_network.vnet.id
+  value       = azurerm_virtual_network.main.id
 }
 
 output "subnet_ids_map" {
@@ -23,6 +23,6 @@ output "firewallmanagementsubnet" {
 
 output "vnet_name" {
   description = "The name of the virtual network."
-  value       = azurerm_virtual_network.vnet.name
+  value       = azurerm_virtual_network.main.name
 }
 
