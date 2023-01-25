@@ -1,6 +1,6 @@
 
 
-resource "azurerm_firewall_policy" "fwpol" {
+resource "azurerm_firewall_policy" "main" {
   base_policy_id           = var.base_policy_id
   location                 = var.location
   name                     = var.name

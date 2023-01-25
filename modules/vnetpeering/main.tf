@@ -1,4 +1,4 @@
-resource "azurerm_virtual_network_peering" "vnetpeer" {
+resource "azurerm_virtual_network_peering" "main" {
   name                         = var.name
   resource_group_name          = var.resource_group_name
   virtual_network_name         = var.virtual_network_name

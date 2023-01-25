@@ -12,7 +12,7 @@ resource "azurerm_public_ip" "vpngw" {
 }
 
 
-resource "azurerm_virtual_network_gateway" "vpngw" {
+resource "azurerm_virtual_network_gateway" "main" {
   name                = local.gateway_name
   location            = var.location
   resource_group_name = var.resource_group_name

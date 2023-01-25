@@ -24,3 +24,4 @@ Modules currently in this repository:
 - Add Examples
 - Tidy up the code
 - More modules to be added
+- Start aligning modules to https://cloud.google.com/docs/terraform/best-practices-for-terraform 

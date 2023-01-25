@@ -1,6 +1,6 @@
 
 
-resource "azurerm_firewall_policy_rule_collection_group" "fwrulecollection" {
+resource "azurerm_firewall_policy_rule_collection_group" "main" {
   firewall_policy_id = var.fw_policy_id
   name               = var.name
   priority           = var.priority

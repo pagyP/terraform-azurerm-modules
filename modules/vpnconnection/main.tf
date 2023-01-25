@@ -1,4 +1,4 @@
-resource "azurerm_virtual_network_gateway_connection" "vpncon" {
+resource "azurerm_virtual_network_gateway_connection" "main" {
   name                       = var.name
   location                   = var.location
   resource_group_name        = var.resource_group_name

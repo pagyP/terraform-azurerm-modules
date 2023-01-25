@@ -8,7 +8,7 @@ locals {
 #   experiments = [module_variable_optional_attrs]
 # }
 
-resource "azurerm_public_ip" "fw" {
+resource "azurerm_public_ip" "main" {
   name                = local.firewall_pip_name
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -19,7 +19,7 @@ resource "azurerm_public_ip" "fw" {
   tags                = var.tags
 }
 
-resource "azurerm_public_ip_prefix" "fw" {
+resource "azurerm_public_ip_prefix" "main" {
   name                = local.firewall_public_prefix_name
   resource_group_name = var.resource_group_name
   location            = var.location
@@ -30,7 +30,7 @@ resource "azurerm_public_ip_prefix" "fw" {
 
 }
 
-resource "azurerm_public_ip" "fw-mgmt-pip" {
+resource "azurerm_public_ip" "main" {
   count               = var.enable_force_tunneling ? 1 : 0
   name                = "${local.firewall_name}-mgmt-pip"
   location            = var.location
@@ -41,7 +41,7 @@ resource "azurerm_public_ip" "fw-mgmt-pip" {
   tags                = var.tags
 }
 
-resource "azurerm_firewall" "fw" {
+resource "azurerm_firewall" "main" {
   #name = "${var.firewall_config.name}-${local.firewall_name}"
   name                = local.firewall_name
   resource_group_name = var.resource_group_name

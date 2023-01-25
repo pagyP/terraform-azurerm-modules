@@ -1,12 +1,12 @@
 provider "azurerm" {
   features {}
 }
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "main" {
   name     = "vwan_rg"
   location = "westeurope"
 }
 
-resource "azurerm_virtual_wan" "vwan" {
+resource "azurerm_virtual_wan" "main" {
   location = var.location
   name     = var.name
   #resource_group_name = var.resource_group_name
@@ -18,7 +18,7 @@ resource "azurerm_virtual_wan" "vwan" {
   tags                              = var.tags
 }
 
-resource "azurerm_virtual_hub" "hub" {
+resource "azurerm_virtual_hub" "main" {
 
   for_each = var.hub_config
 
